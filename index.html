@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Morris Media Productions</title>
+<meta name="description" content="Morris Media Productions — editing, production, and post run by an Emmy-winning network editor with 25 years of on air experience. Highland Lakes, NJ." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0E1116; --panel:#161A21; --panel-2:#1C212B; --line:#272D38;
+    --ink:#E8EAED; --mute:#8A929E; --faint:#5A626E;
+    --gold:#D4AF61;        /* Emmy gold */
+    --gold-bright:#EBCE85; --gold-dim:#5f4e29;
+    --maxw:1140px;
+    --display:'Archivo Expanded',system-ui,sans-serif;
+    --body:'IBM Plex Sans',system-ui,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--gold);color:#0E1116}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+
+  header{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(10px);background:rgba(14,17,22,.72);border-bottom:1px solid var(--line)}
+  .bar{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .brand{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-weight:600;letter-spacing:.16em;font-size:.78rem;text-transform:uppercase}
+  .tally{width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold);animation:pulse 2.4s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+  .nav{display:flex;gap:30px}
+  .nav a{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);transition:color .2s}
+  .nav a:hover{color:var(--ink)}
+  @media(max-width:760px){.nav{display:none}}
+
+  section{padding:112px 0;border-bottom:1px solid var(--line);position:relative}
+  .eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:30px}
+  .eyebrow .tc{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;color:var(--gold);text-transform:uppercase}
+  .eyebrow .lbl{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--faint);text-transform:uppercase}
+  .eyebrow .rule{flex:1;height:1px;background:var(--line)}
+  h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.04;letter-spacing:-.01em}
+
+  /* hero */
+  .hero{padding-top:128px;padding-bottom:96px}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:54px;align-items:center}
+  @media(max-width:880px){.hero-grid{grid-template-columns:1fr;gap:40px}}
+  .hero h1{font-size:clamp(2.4rem,5.6vw,4.6rem);font-weight:800;letter-spacing:-.02em;max-width:13ch}
+  .hero h1 em{color:var(--gold);font-style:normal}
+  .hero .sub{margin-top:24px;max-width:50ch;font-size:1.16rem;color:var(--mute)}
+  .hero .sub strong{color:var(--ink);font-weight:500}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+  .btn{font-family:var(--mono);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;padding:15px 26px;border:1px solid var(--line);border-radius:2px;transition:all .2s;display:inline-flex;align-items:center;gap:10px}
+  .btn.primary{background:var(--gold);color:#0E1116;border-color:var(--gold);font-weight:600}
+  .btn.primary:hover{background:var(--gold-bright);border-color:var(--gold-bright)}
+  .btn.ghost:hover{border-color:var(--mute);color:var(--ink)}
+
+  /* emmy frame */
+  .frame{border:1px solid var(--line);border-radius:5px;background:var(--panel);overflow:hidden;box-shadow:0 40px 90px -45px rgba(0,0,0,.85),0 0 0 1px rgba(212,175,97,.06)}
+  .frame .barline{display:flex;align-items:center;justify-content:space-between;padding:11px 15px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+  .frame .barline .gold{color:var(--gold);display:flex;align-items:center;gap:7px}
+  .frame .barline .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold)}
+  .frame img{display:block;width:100%;height:auto}
+
+  /* showreel monitor */
+  .reel-band{padding:96px 0}
+  .monitor{border:1px solid var(--line);border-radius:4px;background:var(--panel);overflow:hidden;box-shadow:0 36px 80px -45px rgba(0,0,0,.8)}
+  .monitor-bar{display:flex;align-items:center;justify-content:space-between;padding:11px 16px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+  .monitor-bar .rec{display:flex;align-items:center;gap:8px;color:var(--gold)}
+  .monitor-bar .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold)}
+  .screen{position:relative;aspect-ratio:16/9;width:100%;background:radial-gradient(120% 120% at 50% 0%,#1d2530 0%,#0c0f14 70%);display:flex;align-items:center;justify-content:center}
+  .screen-placeholder{text-align:center;padding:24px}
+  .screen-placeholder .play{width:74px;height:74px;border-radius:50%;border:1px solid var(--line);background:rgba(212,175,97,.08);display:flex;align-items:center;justify-content:center;margin:0 auto 22px;transition:all .2s}
+  .monitor:hover .play{background:rgba(212,175,97,.16);border-color:var(--gold-dim)}
+  .screen-placeholder .t{font-family:var(--mono);font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+  .screen-placeholder .s{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--faint);margin-top:8px}
+  .scanline{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 2px,rgba(255,255,255,.012) 2px 4px)}
+
+  /* capabilities */
+  .lead-line{font-size:clamp(1.5rem,3.4vw,2.3rem);font-family:var(--display);font-weight:600;line-height:1.18;letter-spacing:-.01em;max-width:24ch;margin-bottom:50px}
+  .lead-line .g{color:var(--gold)}
+  .caps{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+  @media(max-width:720px){.caps{grid-template-columns:1fr}}
+  .cap{background:var(--bg);padding:36px 32px;transition:background .25s}
+  .cap:hover{background:var(--panel)}
+  .cap .num{font-family:var(--mono);font-size:.72rem;color:var(--gold);letter-spacing:.14em}
+  .cap h3{font-size:1.45rem;margin:15px 0 11px;font-weight:600;letter-spacing:-.01em}
+  .cap p{color:var(--mute);font-size:1rem}
+
+  /* work grid */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:880px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  .clip{border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--panel);transition:border-color .2s,transform .2s}
+  .clip:hover{border-color:var(--gold-dim);transform:translateY(-3px)}
+  .clip .thumb{aspect-ratio:16/9;background:radial-gradient(120% 140% at 30% 0%,#222b37 0%,#0e1218 75%);display:flex;align-items:center;justify-content:center}
+  .clip .thumb .tc{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;color:var(--faint)}
+  .clip .meta{padding:15px 17px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .clip .meta .title{font-size:.95rem;font-weight:500}
+  .clip .meta .tag{font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+  .work-note{margin-top:26px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;color:var(--faint)}
+
+  /* background / story */
+  .story{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+  @media(max-width:880px){.story{grid-template-columns:1fr;gap:40px}}
+  .story .intro p{font-size:1.1rem;color:var(--ink);margin-bottom:18px}
+  .story .intro p.m{color:var(--mute);font-size:1rem}
+  .emmy-detail{margin-top:26px}
+  .emmy-cap{margin-top:14px;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+  .arc{display:flex;flex-direction:column}
+  .arc .step{display:grid;grid-template-columns:74px 1fr;gap:18px;padding:18px 0;border-top:1px solid var(--line)}
+  .arc .step:last-child{border-bottom:1px solid var(--line)}
+  .arc .yr{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--gold);padding-top:3px}
+  .arc .step h4{font-family:var(--body);font-size:1.02rem;font-weight:600;margin-bottom:4px}
+  .arc .step p{font-size:.9rem;color:var(--mute)}
+
+  /* credits */
+  .credits{display:flex;flex-wrap:wrap;gap:10px}
+  .credit{font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;border:1px solid var(--line);border-radius:2px;padding:11px 16px;color:var(--mute);transition:all .2s}
+  .credit:hover{border-color:var(--gold-dim);color:var(--ink)}
+  .credit b{color:var(--gold);font-weight:600}
+
+  /* contact */
+  .contact{border-bottom:none}
+  .contact h2{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;letter-spacing:-.02em;max-width:16ch}
+  .contact h2 em{color:var(--gold);font-style:normal}
+  .contact .sub{color:var(--mute);font-size:1.12rem;margin-top:20px;max-width:46ch}
+  .contact .lines{margin-top:40px;display:flex;flex-direction:column;gap:4px}
+  .contact .lines a,.contact .lines span{font-family:var(--mono);font-size:1.04rem;letter-spacing:.04em;color:var(--ink);display:inline-flex;gap:14px;align-items:baseline;width:fit-content;padding:6px 0;transition:color .2s}
+  .contact .lines a:hover{color:var(--gold)}
+  .contact .lines .k{color:var(--faint);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;width:64px}
+
+  footer{padding:36px 0;color:var(--faint)}
+  .foot{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.tally,.dot{animation:none}html{scroll-behavior:auto}}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+  /* video work cards + reel + lightbox */
+  button.clip{font:inherit;color:inherit;text-align:left;width:100%;cursor:pointer;background:none;display:block}
+  .clip .thumb{position:relative}
+  .clip .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .clip .thumb::after{content:"";position:absolute;inset:0;background:rgba(212,175,97,0);transition:background .2s}
+  .clip:hover .thumb::after{background:rgba(212,175,97,.10)}
+  .reelvid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000;z-index:1}
+  .reel-band .scanline{z-index:2}
+  .lightbox{position:fixed;inset:0;z-index:200;background:rgba(8,10,13,.93);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:28px}
+  .lightbox.on{display:flex}
+  .lightbox video{width:100%;max-width:1040px;max-height:84vh;background:#000;border:1px solid var(--line);border-radius:4px;box-shadow:0 40px 90px -45px rgba(0,0,0,.9)}
+  .lightbox .x{position:absolute;top:20px;right:28px;background:none;border:none;color:var(--ink);font-size:2.3rem;line-height:1;cursor:pointer;font-family:var(--mono)}
+  .lightbox .x:hover{color:var(--gold)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <div class="brand"><span class="tally"></span> Morris Media Productions</div>
+    <nav class="nav">
+      <a href="#work">Work</a><a href="#capabilities">Capabilities</a><a href="#background">Background</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow reveal"><span class="tc">REC ●</span><span class="lbl">Highland Lakes, NJ — Production &amp; Post</span></div>
+      <h1 class="reveal">I turn unfinished work into completed projects <em>fast.</em></h1>
+      <p class="sub reveal"><strong>Morris Media Productions</strong> is a production and post studio run by an Emmy-winning network editor with 25 years of on air experience.</p>
+      <div class="cta-row reveal">
+        <a class="btn primary" href="#contact">Start a project →</a>
+        <a class="btn ghost" href="#work">See the work</a>
+      </div>
+    </div>
+    <div class="frame reveal">
+      <div class="barline"><span class="gold"><span class="dot"></span> Emmy · 2022</span><span>Ryan Morris, Editor</span></div>
+      <img src="images/emmy-detail.jpg" alt="Emmy engraving: 2022 News &amp; Documentary Emmy, Outstanding Live News Program, CBS Mornings / CBS This Morning, Ryan Morris, Editor" />
+    </div>
+  </div>
+</section>
+
+<section id="capabilities">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="tc">01:00</span><span class="lbl">What we do</span><span class="rule"></span></div>
+    <div class="lead-line reveal">Network speed. <span class="g">A story in every cut.</span></div>
+    <div class="caps">
+      <div class="cap reveal"><div class="num">A / EDITORIAL</div><h3>Find the story, then cut it fast</h3><p>Years of national interrupts and morning-news SOTs and VOs taught one thing: get to the story and get it out the door. Hand over the footage, however rough, and it comes back with a shape.</p></div>
+      <div class="cap reveal"><div class="num">B / REMOTE LIVE-EDIT SESSIONS</div><h3>Sit in on the cut from anywhere</h3><p>Join the session remotely, make the calls together, and walk away with finished work.</p></div>
+      <div class="cap reveal"><div class="num">C / MOTION &amp; FINISHING</div><h3>Graphics, titling, and clean delivery</h3><p>Motion graphics, lower-thirds, and finishing to spec — built for real distribution, not just the screening room.</p></div>
+      <div class="cap reveal"><div class="num">D / WORKFLOW &amp; SYSTEMS</div><h3>Post workflows that hold up</h3><p>Ingest, format, and delivery setup from an editor who spent years solving format, codec, and export problems at CBS News.</p></div>
+      <div class="cap reveal"><div class="num">E / VOICEOVER</div><h3>Voiceover, made in-house</h3><p>AI-voiced narration, promos, explainers, and scratch tracks, revised as the cut changes, so the edit never waits on a booking.</p></div>
+      <div class="cap reveal"><div class="num">F / ORIGINAL MUSIC</div><h3>An original catalog, scored to picture</h3><p>150+ original tracks, plus custom scoring when the piece calls for it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="tc">02:00</span><span class="lbl">Selected work</span><span class="rule"></span></div>
+    <div class="grid">
+      <button class="clip reveal" data-src="media/freemans.mp4" data-poster="images/work/freemans.jpg"><div class="thumb"><img src="images/work/freemans.jpg" alt="Freemans brand film" loading="lazy" /></div><div class="meta"><span class="title">Freemans — Brand Film</span><span class="tag">SHOT</span></div></button>
+      <button class="clip reveal" data-src="media/bsp-executive-brief.mp4" data-poster="images/work/bsp-executive-brief.jpg"><div class="thumb"><img src="images/work/bsp-executive-brief.jpg" alt="Business Solutions Partners executive brief" loading="lazy" /></div><div class="meta"><span class="title">Business Solutions Partners</span><span class="tag">BRAND</span></div></button>
+      <button class="clip reveal" data-src="media/foodservice-whitepaper.mp4" data-poster="images/work/foodservice-whitepaper.jpg"><div class="thumb"><img src="images/work/foodservice-whitepaper.jpg" alt="Food service white paper, motion graphics" loading="lazy" /></div><div class="meta"><span class="title">Food Service White Paper</span><span class="tag">MOTION GFX</span></div></button>
+      <button class="clip reveal" data-src="media/bisco-wonsuh.mp4" data-poster="images/work/bisco-wonsuh.jpg"><div class="thumb"><img src="images/work/bisco-wonsuh.jpg" alt="BISCO interview, Won Suh" loading="lazy" /></div><div class="meta"><span class="title">BISCO Interviews — Won Suh</span><span class="tag">PRODUCED &amp; EDITED</span></div></button>
+      <button class="clip reveal" data-src="media/bisco-paradowski.mp4" data-poster="images/work/bisco-paradowski.jpg"><div class="thumb"><img src="images/work/bisco-paradowski.jpg" alt="BISCO interview, Steve Paradowski" loading="lazy" /></div><div class="meta"><span class="title">BISCO Interviews — Steve Paradowski</span><span class="tag">PRODUCED &amp; EDITED</span></div></button>
+      <button class="clip reveal" data-src="media/luciddreamer-2.mp4" data-poster="images/work/luciddreamer-2.jpg"><div class="thumb"><img src="images/work/luciddreamer-2.jpg" alt="Lucid Dreamer, directed by Josie Curtin, night scene" loading="lazy" /></div><div class="meta"><span class="title">Lucid Dreamer — Night<br><span style="color:var(--mute);font-size:.82rem">dir. Josie Curtin</span></span><span class="tag">EDITED</span></div></button>
+      <button class="clip reveal" data-src="media/luciddreamer-1.mp4" data-poster="images/work/luciddreamer-1.jpg"><div class="thumb"><img src="images/work/luciddreamer-1.jpg" alt="Lucid Dreamer, directed by Josie Curtin, clinic scene" loading="lazy" /></div><div class="meta"><span class="title">Lucid Dreamer — Clinic<br><span style="color:var(--mute);font-size:.82rem">dir. Josie Curtin</span></span><span class="tag">EDITED</span></div></button>
+    </div>
+    <p class="work-note reveal">▏ Selected excerpts. Click any frame to play.</p>
+  </div>
+</section>
+
+<section id="background">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="tc">03:00</span><span class="lbl">Background</span><span class="rule"></span></div>
+    <div class="story">
+      <div class="intro reveal">
+        <p>Ryan Morris spent 25 years in network television, starting in 1999 on live remotes and ending as a breaking-news editor at CBS — cutting national interrupts and morning-news SOTs and VOs. In 2022 he received a News &amp; Documentary Emmy as an editor on CBS Mornings.</p>
+        <p class="m">He founded Morris Media Productions in 2024 to bring that speed and that eye for story to brands, producers, and independent projects.</p>
+        <div class="frame emmy-detail">
+          <div class="barline"><span class="gold"><span class="dot"></span> Ryan Morris · Founder</span><span>CBS THIS MORNING · 1000</span></div>
+          <img src="images/ryan-portrait.jpg" alt="Ryan Morris at the CBS This Morning 1000 Broadcasts event" />
+        </div>
+        <div class="emmy-cap">Ryan Morris — Founder &amp; Principal, MMP</div>
+      </div>
+      <div class="arc reveal">
+        <div class="step"><div class="yr">1999</div><div><h4>Live remote, from the field up</h4><p>Utility, RF/ENG, camera support, SMPTE fiber, truck builds. 11 U.S. Opens.</p></div></div>
+        <div class="step"><div class="yr">2004</div><div><h4>Facility &amp; post transition</h4><p>HBO buildouts and installs — the analog-to-nonlinear shift seen from the room-build side, not just the desk.</p></div></div>
+        <div class="step"><div class="yr">2007</div><div><h4>Recording &amp; early platforms</h4><p>CBS Black Rock — horseshoe recording, multi-deck DVR, edit assist, early CBS Mobile output.</p></div></div>
+        <div class="step"><div class="yr">2008</div><div><h4>Ingest &amp; workflow architecture</h4><p>Format, codec, and export problem-solving through the tape-to-file migration at CBS News.</p></div></div>
+        <div class="step"><div class="yr">2014</div><div><h4>Breaking-news editor</h4><p>National interrupts, plus SOTs and VOs for CBS This Morning and CBS Mornings.</p></div></div>
+        <div class="step"><div class="yr">2024</div><div><h4>Founder — Morris Media Productions</h4><p>Editing, production, and post for brands, producers, and independent work.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="credits">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="tc">04:00</span><span class="lbl">Selected credits</span><span class="rule"></span></div>
+        <div class="credits reveal">
+      <span class="credit"><b>Emmy ●</b>&nbsp; CBS Mornings (2022)</span>
+      <span class="credit">CBS This Morning</span><span class="credit">CBS Mornings</span><span class="credit">Up to the Minute</span>
+      <span class="credit">Survivor Live</span><span class="credit">Finish Line</span><span class="credit">CBS Mobile</span>
+      <span class="credit">HBO Studio Productions</span><span class="credit">11× U.S. Open</span><span class="credit">Paltalk — Music &amp; Interviews</span>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="tc">05:00</span><span class="lbl">Contact</span><span class="rule"></span></div>
+    <h2 class="reveal">Got footage? Let's make it <em>work.</em></h2>
+    <p class="sub reveal">Raw footage that needs a story, a cut that needs finishing, or a deadline that needs meeting. Send it over.</p>
+    <div class="lines reveal">
+      <a id="mail" href="#contact"><span class="k">Email</span> <span id="mailtext">ryan [at] morrismediaproductions [dot] com</span></a>
+      <span><span class="k">Studio</span> Highland Lakes, NJ — remote nationwide</span>
+      </div>
+  </div>
+</section>
+
+<footer><div class="wrap foot"><span>© <span id="yr"></span> Morris Media Productions LLC</span><span>Highland Lakes, NJ ● REC</span></div></footer>
+
+<div class="lightbox" id="lb"><button class="x" id="lbx" aria-label="Close">&times;</button><video id="lbv" controls playsinline></video></div>
+
+<script>
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  // assemble the contact address in the browser (keeps it out of the page source for scrapers)
+  (function(){var u='ryan',d='morrismediaproductions'+'.'+'com',m=u+'@'+d,a=document.getElementById('mail');
+    if(a){a.href='mai'+'lto:'+m;document.getElementById('mailtext').textContent=m;}})();
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // work-grid video lightbox
+  (function(){
+    var lb=document.getElementById('lb'), v=document.getElementById('lbv');
+    document.querySelectorAll('.clip[data-src]').forEach(function(b){
+      b.addEventListener('click',function(){
+        v.src=b.getAttribute('data-src'); v.poster=b.getAttribute('data-poster');
+        lb.classList.add('on'); v.play().catch(function(){});
+      });
+    });
+    function close(){lb.classList.remove('on'); v.pause(); v.removeAttribute('src'); v.load();}
+    document.getElementById('lbx').addEventListener('click',close);
+    lb.addEventListener('click',function(e){if(e.target===lb)close();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('on'))close();});
+  })();
+</script>
+</body>
+</html>
