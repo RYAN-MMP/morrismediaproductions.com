@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Morris Media Productions</title>
 <meta name="description" content="Morris Media Productions — editing, production, and post run by an Emmy-winning network editor with 25 years of on-air experience. Highland Lakes, NJ." />
+<link rel="canonical" href="https://morrismediaproductions.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Morris Media Productions" />
+<meta property="og:title" content="Morris Media Productions" />
+<meta property="og:description" content="Morris Media Productions — editing, production, and post run by an Emmy-winning network editor with 25 years of on-air experience. Highland Lakes, NJ." />
+<meta property="og:url" content="https://morrismediaproductions.com/" />
+<meta property="og:image" content="https://morrismediaproductions.com/images/emmy-full.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Morris Media Productions LLC","url":"https://morrismediaproductions.com/","founder":{"@type":"Person","name":"Ryan Morris"},"address":{"@type":"PostalAddress","addressLocality":"Highland Lakes","addressRegion":"NJ","addressCountry":"US"},"sameAs":["https://www.youtube.com/channel/UCQDKOcPinUv3t1DozlVQeHA"]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -168,6 +177,18 @@
   .lightbox video{width:100%;max-width:1040px;max-height:84vh;background:#000;border:1px solid var(--line);border-radius:4px;box-shadow:0 40px 90px -45px rgba(0,0,0,.9)}
   .lightbox .x{position:absolute;top:20px;right:28px;background:none;border:none;color:var(--ink);font-size:2.3rem;line-height:1;cursor:pointer;font-family:var(--mono)}
   .lightbox .x:hover{color:var(--gold)}
+
+  /* princess lyla series */
+  .series{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
+  @media(max-width:880px){.series{grid-template-columns:1fr;gap:30px}}
+  .series a.yt{display:block;position:relative;border:1px solid var(--line);border-radius:4px;overflow:hidden;background:#000;aspect-ratio:16/9;transition:border-color .2s,transform .2s}
+  .series a.yt:hover{border-color:var(--gold-dim);transform:translateY(-3px)}
+  .series a.yt img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .series a.yt .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:74px;height:74px;border-radius:50%;background:rgba(14,17,22,.72);border:1px solid var(--gold-dim);display:flex;align-items:center;justify-content:center}
+  .series h3{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700;letter-spacing:-.01em}
+  .series .ep{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:14px}
+  .series p{color:var(--mute);margin-top:16px;max-width:38ch}
+  .series .cta-row{margin-top:28px}
 </style>
 </head>
 <body>
@@ -176,7 +197,7 @@
   <div class="wrap bar">
     <div class="brand"><span class="tally"></span> Morris Media Productions</div>
     <nav class="nav">
-      <a href="#work">Work</a><a href="#capabilities">Capabilities</a><a href="#background">Background</a><a href="#contact">Contact</a>
+      <a href="#work">Work</a><a href="#lyla">Princess Lyla</a><a href="#capabilities">Capabilities</a><a href="#background">Background</a><a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -230,9 +251,27 @@
   </div>
 </section>
 
+<section id="lyla">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="tc">03:00</span><span class="lbl">Original series</span><span class="rule"></span></div>
+    <div class="series">
+      <a class="yt reveal" href="https://youtu.be/oGVAdYvdEZc" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/oGVAdYvdEZc/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/oGVAdYvdEZc/hqdefault.jpg'" alt="The Adventures of Princess Lyla: Sweet Dreams Sleepy Time" loading="lazy" /><span class="play"><svg width="22" height="24" viewBox="0 0 22 24" aria-hidden="true"><path d="M2 1.5v21L20.5 12z" fill="#D4AF61"/></svg></span></a>
+      <div class="reveal">
+        <h3>The Adventures of Princess Lyla</h3>
+        <div class="ep">Sweet Dreams Sleepy Time · 8 hours</div>
+        <p>8 hours of Princess Lyla sleeping with her mommy and daddy Bow and Finkles.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="https://youtu.be/oGVAdYvdEZc" target="_blank" rel="noopener">Watch on YouTube →</a>
+          <a class="btn ghost" href="https://www.youtube.com/channel/UCQDKOcPinUv3t1DozlVQeHA?sub_confirmation=1" target="_blank" rel="noopener">Subscribe</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="background">
   <div class="wrap">
-    <div class="eyebrow reveal"><span class="tc">03:00</span><span class="lbl">Background</span><span class="rule"></span></div>
+    <div class="eyebrow reveal"><span class="tc">04:00</span><span class="lbl">Background</span><span class="rule"></span></div>
     <div class="story">
       <div class="intro reveal">
         <p>Ryan Morris spent 25 years in network television, starting in 1999 on live remotes and ending as a breaking-news editor at CBS — cutting national interrupts and morning-news SOTs and VOs. In 2022 he received a News &amp; Documentary Emmy as an editor on CBS Mornings.</p>
@@ -257,7 +296,7 @@
 
 <section id="credits">
   <div class="wrap">
-    <div class="eyebrow reveal"><span class="tc">04:00</span><span class="lbl">Selected credits</span><span class="rule"></span></div>
+    <div class="eyebrow reveal"><span class="tc">05:00</span><span class="lbl">Selected credits</span><span class="rule"></span></div>
         <div class="credits reveal">
       <span class="credit"><b>Emmy ●</b>&nbsp; CBS Mornings (2022)</span>
       <span class="credit">CBS This Morning</span><span class="credit">CBS Mornings</span><span class="credit">Up to the Minute</span>
@@ -269,7 +308,7 @@
 
 <section class="contact" id="contact">
   <div class="wrap">
-    <div class="eyebrow reveal"><span class="tc">05:00</span><span class="lbl">Contact</span><span class="rule"></span></div>
+    <div class="eyebrow reveal"><span class="tc">06:00</span><span class="lbl">Contact</span><span class="rule"></span></div>
     <h2 class="reveal">Got footage? Let's make it <em>work.</em></h2>
     <p class="sub reveal">Raw footage that needs a story, a cut that needs finishing, or a deadline that needs meeting. Send it over.</p>
     <form class="cform reveal" id="cform" novalidate>
@@ -337,5 +376,6 @@
     document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('on'))close();});
   })();
 </script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d88714f643b844d895d99bd9185a7597"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
